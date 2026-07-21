@@ -1,0 +1,136 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./tokens.css";
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 73px;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.08); opacity: 0.8; }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Subtle Permanent Chromatic Aberration */
+.chromatic-aberration {
+  text-shadow: 
+    -1.5px 0 rgba(6, 182, 212, 0.45), 
+    1.5px 0 rgba(236, 72, 153, 0.45);
+}
+
+/* Sporadic Glitch Keyframes */
+@keyframes glitch-anim {
+  0% {
+    clip-path: inset(15% 0 60% 0);
+    transform: translate(-4px, -2px) skewX(-2deg);
+    filter: hue-rotate(90deg) contrast(1.4);
+    text-shadow: -4px 0 rgba(0, 255, 255, 0.9), 4px 0 rgba(255, 0, 128, 0.9);
+  }
+  20% {
+    clip-path: inset(65% 0 10% 0);
+    transform: translate(5px, 2px) skewX(2deg);
+    filter: invert(0.15) hue-rotate(180deg);
+    text-shadow: 4px -2px rgba(0, 255, 255, 0.9), -4px 2px rgba(255, 0, 128, 0.9);
+  }
+  40% {
+    clip-path: inset(10% 0 75% 0);
+    transform: translate(-3px, 3px);
+    text-shadow: -5px 0 rgba(0, 255, 255, 0.9), 5px 0 rgba(255, 0, 128, 0.9);
+  }
+  60% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(3px, -3px) skewX(-1deg);
+    filter: hue-rotate(270deg);
+    text-shadow: 3px 2px rgba(0, 255, 255, 0.9), -3px -2px rgba(255, 0, 128, 0.9);
+  }
+  80% {
+    clip-path: inset(30% 0 40% 0);
+    transform: translate(-2px, -1px);
+    text-shadow: -3px 0 rgba(0, 255, 255, 0.9), 3px 0 rgba(255, 0, 128, 0.9);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0, 0) skewX(0deg);
+    filter: none;
+    text-shadow: -1.5px 0 rgba(6, 182, 212, 0.45), 1.5px 0 rgba(236, 72, 153, 0.45);
+  }
+}
+
+.animate-glitch-intense {
+  animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes micro-glitch-anim {
+  0% { transform: translate(-2px, 1px); filter: contrast(1.2); }
+  25% { transform: translate(2px, -1px); }
+  50% { transform: translate(-1px, -2px); filter: hue-rotate(90deg); }
+  75% { transform: translate(1px, 2px); }
+  100% { transform: translate(0, 0); filter: none; }
+}
+
+.animate-micro-glitch {
+  animation: micro-glitch-anim 0.3s ease-in-out both;
+}
+
+@keyframes scanline-anim {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.animate-scanline {
+  animation: scanline-anim 0.3s linear infinite;
+}
+
+@keyframes hero-page-glitch {
+  0% { transform: translate(0, 0) skew(0deg); }
+  15% { transform: translate(-4px, 2px) skewX(0.8deg); filter: contrast(1.15) hue-rotate(15deg); }
+  35% { transform: translate(4px, -2px) skewX(-0.8deg); filter: invert(0.08) contrast(1.25); }
+  55% { transform: translate(-3px, -1px) skewY(0.4deg); }
+  75% { transform: translate(3px, 2px); filter: contrast(1.1); }
+  100% { transform: translate(0, 0) skew(0deg); filter: none; }
+}
+
+.animate-hero-page-glitch {
+  animation: hero-page-glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}

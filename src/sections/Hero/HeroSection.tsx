@@ -68,6 +68,9 @@ export const HeroSection = () => {
   const { locale } = useLocaleContext();
   const { isGlitched, getScrambledText } = useGlitch(3000, 5000, 300);
   
+  const displayName = locale === "en" ? profile.fullName : "شهاب عبد الرحمن";
+  const displayRole = locale === "en" ? profile.roleTitle : "مطور واجهات أمامية | متخصص ريأكت";
+  
   return (
     <SectionContainer id="hero" showTopFade={false} className={`relative overflow-hidden ${isGlitched ? "animate-hero-page-glitch" : ""}`}>
       {/* Background Visuals: Grid Pattern, Floating Pixel Dust & Soft Radial Glows */}
@@ -81,7 +84,7 @@ export const HeroSection = () => {
       <PixelParticles />
       <div className="absolute top-1/4 left-1/4 w-[200px] h-[200px] md:w-[350px] md:h-[350px] rounded-full bg-brand-500/10 dark:bg-brand-500/5 blur-[80px] md:blur-[100px] pointer-events-none animate-pulse-glow" />
       <div className="absolute bottom-1/4 right-1/4 w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full bg-indigo-500/10 dark:bg-indigo-500/5 blur-[100px] md:blur-[120px] pointer-events-none" />
-
+ 
       {/* Fleeting Background Glitch Static Overlay */}
       {isGlitched && (
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-40">
@@ -91,7 +94,7 @@ export const HeroSection = () => {
           <div className="absolute bottom-1/3 right-12 w-48 h-4 bg-purple-500/20 blur-sm animate-pulse" />
         </div>
       )}
-
+ 
       <motion.div layout className="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
         <motion.div 
           layout
@@ -102,14 +105,14 @@ export const HeroSection = () => {
         >
           <motion.div layout variants={itemVariants}>
             <p className="text-xs sm:text-sm md:text-base font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 min-h-[1.5em]">
-              <TypingText text={profile.roleTitle} isGlitched={isGlitched} getScrambledText={getScrambledText} />
+              <TypingText text={displayRole} isGlitched={isGlitched} getScrambledText={getScrambledText} />
             </p>
           </motion.div>
           
           <motion.div layout variants={itemVariants}>
             <h1 className="relative text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight py-1 select-none">
               <span className={`inline-block bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-purple-600 to-indigo-600 dark:from-brand-400 dark:via-purple-400 dark:to-indigo-400 chromatic-aberration ${isGlitched ? "animate-glitch-intense" : ""}`}>
-                {isGlitched ? getScrambledText(profile.fullName, 0.4) : profile.fullName}
+                {isGlitched ? getScrambledText(displayName, 0.4) : displayName}
               </span>
 
               {/* Data line overlay during glitch */}

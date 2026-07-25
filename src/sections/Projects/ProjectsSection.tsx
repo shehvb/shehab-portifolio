@@ -191,7 +191,7 @@ const projectsData: LocalizedProject[] = [
     gitLink: "https://github.com/shehvb/SHR4_SWD2_S1_PROJECT4/tree/main/GithubAnalytics",
     features: {
       en: [
-        "Dynamic GitHub user profile lookup and search interface",
+        "Dynamic GitHub profile lookup and search interface",
         "Interactive data visualizations for repository language breakdown",
         "Detailed graphs tracking repository stars and contribution stats",
         "Optimized async fetching states and error handling layouts"
@@ -290,9 +290,9 @@ export const ProjectsSection = () => {
   };
 
   return (
-    <div className="w-full bg-[#070913] text-slate-100 relative overflow-hidden snap-start">
+    <div className="w-full bg-white text-slate-900 dark:bg-[#070913] dark:text-slate-100 relative overflow-hidden transition-colors duration-500 snap-start">
       {/* Background glow visual accents */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-indigo-600/10 blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-indigo-500/10 dark:bg-indigo-600/10 blur-[140px] pointer-events-none" />
 
       <SectionContainer id="projects" showTopFade={false} showBottomFade={false} className="py-20 relative z-10">
         
@@ -304,14 +304,14 @@ export const ProjectsSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center max-w-3xl mx-auto mb-16 relative z-10"
         >
-          <span className="px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2 mb-4">
-            <HiSparkles className="text-sm text-indigo-400" />
+          <span className="px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold uppercase tracking-wider inline-flex items-center gap-2 mb-4">
+            <HiSparkles className="text-sm text-indigo-500 dark:text-indigo-400" />
             {locale === "en" ? "FEATURED WORK" : "أعمال مميزة"}
           </span>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             {locale === "en" ? "Selected " : "مشاريع "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-cyan-400 dark:via-indigo-400 dark:to-purple-400">
               {locale === "en" ? "Projects" : "مختارة"}
             </span>
           </h2>
@@ -331,26 +331,26 @@ export const ProjectsSection = () => {
                   transition={{ duration: 0.5, delay: project.id * 0.1 }}
                   whileHover={{ y: -5 }}
                   onClick={() => setSelectedProject(project)}
-                  className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-5 w-full max-w-[330px] sm:max-w-[350px] shadow-2xl flex flex-col justify-between hover:border-cyan-500/30 transition-colors duration-300 group cursor-pointer"
+                  className="bg-slate-900/5 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl rounded-3xl p-5 w-full max-w-[330px] sm:max-w-[350px] shadow-xl dark:shadow-2xl flex flex-col justify-between hover:border-indigo-500/40 dark:hover:border-cyan-500/30 transition-all duration-300 group cursor-pointer"
                 >
                   <div>
                     {/* Badge & Title */}
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
                         {project.badge[locale]}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4 line-clamp-1">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 line-clamp-1">
                       {project.title[locale]}
                     </h3>
 
                     {/* Image Mockup Frame */}
-                    <div className="bg-slate-950/80 rounded-2xl border border-white/10 overflow-hidden shadow-inner mb-4">
-                      <div className="flex items-center gap-1 px-3 py-1.5 bg-slate-900 border-b border-white/5">
+                    <div className="bg-slate-100 dark:bg-slate-950/80 rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden shadow-inner mb-4">
+                      <div className="flex items-center gap-1 px-3 py-1.5 bg-slate-200/80 dark:bg-slate-900 border-b border-slate-300/70 dark:border-white/5">
                         <span className="w-2 h-2 rounded-full bg-[#ff5f56]" />
                         <span className="w-2 h-2 rounded-full bg-[#ffbd2e]" />
                         <span className="w-2 h-2 rounded-full bg-[#27c93f]" />
-                        <div className="mx-auto bg-slate-800/40 rounded text-[9px] text-slate-500 px-3 py-0.5 max-w-[100px] truncate text-center font-mono">
+                        <div className="mx-auto bg-slate-300/60 dark:bg-slate-800/40 rounded text-[9px] text-slate-600 dark:text-slate-500 px-3 py-0.5 max-w-[100px] truncate text-center font-mono">
                           {project.domain}
                         </div>
                       </div>
@@ -366,7 +366,7 @@ export const ProjectsSection = () => {
                     {/* Tech tags */}
                     <div className="flex flex-wrap gap-1.5 mb-5 min-h-[60px] content-start">
                       {project.tech.map((tag) => (
-                        <span key={tag} className="text-[10px] bg-white/5 text-slate-300 px-2 py-0.5 rounded border border-white/5 font-mono">
+                        <span key={tag} className="text-[10px] bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded border border-slate-200 dark:border-white/5 font-mono">
                           {tag}
                         </span>
                       ))}
@@ -379,7 +379,7 @@ export const ProjectsSection = () => {
                       e.stopPropagation();
                       setSelectedProject(project);
                     }}
-                    className="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white transition-all hover:border-cyan-500/30 flex items-center justify-center gap-2 group/btn cursor-pointer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-800 dark:text-white transition-all hover:border-indigo-500/30 dark:hover:border-cyan-500/30 flex items-center justify-center gap-2 group/btn cursor-pointer"
                   >
                     <span>{locale === "en" ? "View Details" : "عرض التفاصيل"}</span>
                     <HiArrowRight className="text-sm transition-transform duration-300 group-hover/btn:translate-x-1 rtl:group-hover/btn:-translate-x-1 rtl:rotate-180" />
@@ -406,29 +406,29 @@ export const ProjectsSection = () => {
                       y: -30, 
                       scale: 1.05, 
                       zIndex: 50,
-                      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.5)"
+                      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
                     }}
                     onClick={() => setSelectedProject(project)}
-                    className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-5 w-[330px] lg:w-[350px] shadow-2xl flex flex-col justify-between hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] transition-colors duration-300 z-10 group cursor-pointer relative"
+                    className="bg-slate-900/5 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl rounded-3xl p-5 w-[330px] lg:w-[350px] shadow-xl dark:shadow-2xl flex flex-col justify-between hover:border-indigo-500/40 dark:hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(99,102,241,0.2)] dark:hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] transition-all duration-300 z-10 group cursor-pointer relative"
                   >
                     <div>
                       {/* Badge & Title */}
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
+                        <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
                           {project.badge[locale]}
                         </span>
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-4 line-clamp-1">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 line-clamp-1">
                         {project.title[locale]}
                       </h3>
 
                       {/* Image Mockup Frame */}
-                      <div className="bg-slate-950/80 rounded-2xl border border-white/10 overflow-hidden shadow-inner mb-4">
-                        <div className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 border-b border-white/5">
+                      <div className="bg-slate-100 dark:bg-slate-950/80 rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden shadow-inner mb-4">
+                        <div className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-200/80 dark:bg-slate-900 border-b border-slate-300/70 dark:border-white/5">
                           <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
                           <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
                           <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-                          <div className="mx-auto bg-slate-800/40 rounded text-[9px] text-slate-500 px-3 py-0.5 max-w-[120px] truncate text-center font-mono">
+                          <div className="mx-auto bg-slate-300/60 dark:bg-slate-800/40 rounded text-[9px] text-slate-600 dark:text-slate-500 px-3 py-0.5 max-w-[120px] truncate text-center font-mono">
                             {project.domain}
                           </div>
                         </div>
@@ -444,7 +444,7 @@ export const ProjectsSection = () => {
                       {/* Tech tags */}
                       <div className="flex flex-wrap gap-1.5 mb-5 min-h-[60px] content-start">
                         {project.tech.map((tag) => (
-                          <span key={tag} className="text-[10px] bg-white/5 text-slate-300 px-2 py-0.5 rounded border border-white/5 font-mono">
+                          <span key={tag} className="text-[10px] bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded border border-slate-200 dark:border-white/5 font-mono">
                             {tag}
                           </span>
                         ))}
@@ -457,7 +457,7 @@ export const ProjectsSection = () => {
                         e.stopPropagation();
                         setSelectedProject(project);
                       }}
-                      className="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white transition-all hover:border-cyan-500/30 flex items-center justify-center gap-2 group/btn cursor-pointer"
+                      className="w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-800 dark:text-white transition-all hover:border-indigo-500/30 dark:hover:border-cyan-500/30 flex items-center justify-center gap-2 group/btn cursor-pointer"
                     >
                       <span>{locale === "en" ? "View Details" : "عرض التفاصيل"}</span>
                       <HiArrowRight className="text-sm transition-transform duration-300 group-hover/btn:translate-x-1 rtl:group-hover/btn:-translate-x-1 rtl:rotate-180" />
@@ -480,7 +480,7 @@ export const ProjectsSection = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
-              className="absolute inset-0 bg-slate-950/80 backdrop-blur-md cursor-zoom-out"
+              className="absolute inset-0 bg-slate-950/60 dark:bg-slate-950/80 backdrop-blur-md cursor-zoom-out"
             />
             
             {/* Modal Window */}
@@ -489,33 +489,33 @@ export const ProjectsSection = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 350 }}
-              className="w-full max-w-5xl bg-[#0b0f19] border border-white/10 rounded-3xl shadow-2xl relative z-10 overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh] overscroll-contain"
+              className="w-full max-w-5xl bg-white dark:bg-[#0b0f19] border border-slate-200 dark:border-white/10 rounded-3xl shadow-2xl relative z-10 overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh] overscroll-contain"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors cursor-pointer"
+                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <HiOutlineXMark className="text-xl sm:text-2xl" />
               </button>
 
               {/* Modal Left - Image Preview */}
-              <div className="w-full md:w-1/2 p-6 md:p-8 flex items-center justify-center bg-slate-950/40 border-b md:border-b-0 md:border-r border-white/5 overflow-y-auto overscroll-contain">
-                <div className="bg-slate-950 rounded-2xl border border-white/10 overflow-hidden shadow-2xl w-full">
+              <div className="w-full md:w-1/2 p-6 md:p-8 flex items-center justify-center bg-slate-100/70 dark:bg-slate-950/40 border-b md:border-b-0 md:border-r border-slate-200 dark:border-white/5 overflow-y-auto overscroll-contain">
+                <div className="bg-white dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl w-full">
                   {/* Browser Header Mockup in Modal */}
-                  <div className="flex items-center gap-1.5 px-4 py-2 bg-slate-900/90 border-b border-white/5">
+                  <div className="flex items-center gap-1.5 px-4 py-2 bg-slate-200/90 dark:bg-slate-900/90 border-b border-slate-300/70 dark:border-white/5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-                    <div className="mx-auto bg-slate-800/50 rounded text-xs text-slate-400 px-4 py-0.5 max-w-[200px] truncate text-center font-mono">
+                    <div className="mx-auto bg-slate-300/60 dark:bg-slate-800/50 rounded text-xs text-slate-700 dark:text-slate-400 px-4 py-0.5 max-w-[200px] truncate text-center font-mono">
                       {selectedProject.domain}
                     </div>
                   </div>
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title[locale]}
-                    className="w-full h-auto max-h-[300px] md:max-h-[450px] object-contain bg-slate-950"
+                    className="w-full h-auto max-h-[300px] md:max-h-[450px] object-contain bg-white dark:bg-slate-950"
                   />
                 </div>
               </div>
@@ -524,28 +524,28 @@ export const ProjectsSection = () => {
               <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto overscroll-contain">
                 <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-indigo-600 dark:text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
                       {selectedProject.badge[locale]}
                     </span>
                   </div>
                   
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
                     {selectedProject.title[locale]}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6 font-normal">
+                  <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-6 font-normal">
                     {selectedProject.description[locale]}
                   </p>
 
                   {/* Features List */}
                   <div className="mb-6">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
                       {locale === "en" ? "Key Features" : "الميزات الرئيسية"}
                     </h4>
                     <ul className="space-y-2">
                       {selectedProject.features[locale].map((feat, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                          <HiCheckCircle className="text-indigo-400 text-sm mt-0.5 shrink-0" />
+                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                          <HiCheckCircle className="text-indigo-600 dark:text-indigo-400 text-sm mt-0.5 shrink-0" />
                           <span>{feat}</span>
                         </li>
                       ))}
@@ -554,14 +554,14 @@ export const ProjectsSection = () => {
 
                   {/* Tech Stack */}
                   <div className="mb-6">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
                       {locale === "en" ? "Technologies Used" : "التقنيات المستخدمة"}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.tech.map((tag) => (
                         <span
                           key={tag}
-                          className="text-xs bg-indigo-500/5 text-indigo-300 px-3 py-1 rounded-xl border border-indigo-500/10 font-mono"
+                          className="text-xs bg-indigo-500/10 dark:bg-indigo-500/5 text-indigo-700 dark:text-indigo-300 px-3 py-1 rounded-xl border border-indigo-500/20 dark:border-indigo-500/10 font-mono"
                         >
                           {tag}
                         </span>
@@ -571,12 +571,12 @@ export const ProjectsSection = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center gap-4 mt-6 pt-6 border-t border-white/5 justify-end">
+                <div className="flex items-center gap-4 mt-6 pt-6 border-t border-slate-200 dark:border-white/5 justify-end">
                   <a
                     href={selectedProject.gitLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white transition-all cursor-pointer"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-xs font-semibold text-slate-800 dark:text-white transition-all cursor-pointer"
                   >
                     <FaGithub className="text-sm sm:text-base" />
                     <span>{locale === "en" ? "GitHub / Code" : "كود المشروع"}</span>
@@ -586,7 +586,7 @@ export const ProjectsSection = () => {
                       href={selectedProject.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-400 hover:to-indigo-400 text-xs font-semibold text-white shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all cursor-pointer"
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-cyan-500 dark:to-indigo-500 hover:from-blue-500 hover:to-indigo-500 dark:hover:from-cyan-400 dark:hover:to-indigo-400 text-xs font-semibold text-white shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all cursor-pointer"
                     >
                       <HiGlobeAlt className="text-sm sm:text-base" />
                       <span>{locale === "en" ? "Live Demo" : "عرض مباشر"}</span>

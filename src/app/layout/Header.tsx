@@ -15,13 +15,13 @@ export const Header = () => {
         {/* Brand Logo */}
         <a 
           href="#hero" 
-          className="group flex items-center gap-2 transition-all duration-300 select-none hover:opacity-90"
+          className="group flex items-center gap-2 transition-all duration-300 select-none hover:opacity-90 "
         >
           <div className="flex h-7 w-8 sm:h-8 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-brand-500 via-purple-800 to-indigo-950 dark:from-brand-500 dark:via-purple-800 dark:to-indigo-950 text-white shadow-md shadow-brand-500/20 ">
             <HiCode className="text-lg sm:text-xl" />
           </div>
-          <span className="text-xl sm:text-2xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-purple-600 to-indigo-600 dark:from-brand-400 dark:via-purple-400 dark:to-indigo-600  uppercase">
-            S.A
+          <span className="text-4xl sm:text-4xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-purple-600 to-indigo-600 dark:from-brand-400 dark:via-purple-400 dark:to-indigo-600  uppercase ">
+            S
           </span>
         </a>
         

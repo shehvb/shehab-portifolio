@@ -62,7 +62,7 @@ const developerData = {
   name: "Shehab AbdElRahman",
   role: "Frontend Developer",
   core: ["React", "Next.js", "JavaScript", "TypeScript", "Tailwind", "BootStrap", "Framer Motion", "Git"],
-  status: "Building high-quality UI 🚀"
+  status: "Building high-quality UI ;)  "
 };
 
 const codeSnippet = `const developer = ${JSON.stringify(developerData, null, 2)};`;
@@ -294,7 +294,7 @@ export const AboutSection = () => {
               {/* Blinking cursor */}
               <div className="mt-3 flex items-center gap-1">
                 <span className="text-emerald-600 dark:text-green-400">❯</span>
-                <span className="w-2 h-4 bg-blue-600 dark:bg-blue-400 animate-pulse rounded-sm" />
+                <span className="w-2 h-4 bg-blue-600 dark:bg-blue-400 animate-pulse" />
               </div>
             </div>
           </motion.div>
